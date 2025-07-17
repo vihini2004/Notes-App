@@ -1,42 +1,213 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+
+/* Set the background to a soft purple and pink */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f7;  /* Light purple background */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Change to flex-start to allow scroll */
+  height: auto;  /* Ensure height is auto for scrolling */
+  position: relative;
+  overflow: auto;  /* Allow scrolling */
+}
+
+/* Container for the entire app */
+.container {
+  width: 90%;
+  max-width: 800px;
   text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 20px; /* Adjust to allow some space on top */
+  overflow: visible; /* Allow the content to overflow */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+/* Header styling */
+h1 {
+  font-size: 36px;
+  color: #6a4c9c;  /* Purple color */
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Form Styling */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 2px solid #d1c4e9;  /* Light purple border */
+  font-size: 16px;
+  color: white;  /* Set text color to white */
+  background-color: #6a4c9c;  /* Dark purple background */
+  box-sizing: border-box;  /* Make sure padding doesn't affect width */
+  outline: none;  /* Remove outline */
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #8e60b1;  /* Purple focus border */
+}
+
+button {
+  background-color: #6a4c9c;  /* Purple button */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #8e60b1;  /* Darker purple on hover */
+}
+
+/* Notes List Styling */
+h2 {
+  color: #6a4c9c;  /* Purple color for "Notes List" */
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-5px);  /* Hover effect */
+}
+
+/* Note Title and Content */
+h3 {
+  color: #6a4c9c;  /* Purple color */
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #5f6368;  /* Dark grey text for content */
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Buttons for Edit and Delete */
+button {
+  background-color: #6a4c9c;
+  color: white;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #8e60b1;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Add more floating bubbles */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(150, 50, 150, 0.5);
+  animation: floatBubbles 6s infinite ease-in-out;
+}
+
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(-300px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Styles for floating bubbles */
+.bubble:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  top: 10%;
+  left: 20%;
+  animation-duration: 8s;
+}
+.bubble:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  top: 30%;
+  left: 60%;
+  animation-duration: 10s;
+}
+.bubble:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  top: 70%;
+  left: 40%;
+  animation-duration: 9s;
+}
+.bubble:nth-child(4) {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 10%;
+  animation-duration: 7s;
+}
+.bubble:nth-child(5) {
+  width: 70px;
+  height: 70px;
+  top: 20%;
+  left: 80%;
+  animation-duration: 6s;
+}
+.bubble:nth-child(6) {
+  width: 90px;
+  height: 90px;
+  top: 80%;
+  left: 50%;
+  animation-duration: 12s;
+}
+.bubble:nth-child(7) {
+  width: 50px;
+  height: 50px;
+  top: 40%;
+  left: 70%;
+  animation-duration: 9s;
+}
+.bubble:nth-child(8) {
+  width: 60px;
+  height: 60px;
+  top: 60%;
+  left: 30%;
+  animation-duration: 8s;
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
